@@ -14,21 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Jmeter {
 	
- 	
-	public static String name=name();
-	
-	
-	public static String name()
-	{
-		Scanner input=new Scanner(System.in);
-		
-		System.out.print("Enter your name:   ");
-		
-		String name=input.nextLine();
-		
-		return name;
-	}
- 
+ 	 
 	@Test
 	public  void user1() throws InterruptedException, ParseException
 	{
@@ -44,22 +30,22 @@ public class Jmeter {
 		
 		driver.findElement(By.xpath("//*[@id='spassword']")).sendKeys("123");
 		
-		
+		System.out.print("Enter");
 		
 		for (int i=1; i>0; i++)
 		{
-			String time=time();
-			Thread.sleep(100);
+			Scanner booleanValue=new Scanner(System.in);
 			
-			System.out.println(name);
-			System.out.println(time);
-			
-			System.out.println(i+" time checked the time");
-			
-			if (time.equals(name))
+			boolean value=booleanValue.nextBoolean();
+		 	if (value==true)
 			{
+				System.out.println("It is true");
 				
 				driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div/form/button")).click();
+			}
+			else
+			{
+				System.out.println("It is false");
 			}
 		}
 		
@@ -67,45 +53,8 @@ public class Jmeter {
 		
 		
 	}
-	
-	@Test
-	public  void user2() throws InterruptedException, ParseException
-	{
-		System.setProperty("webdriver.chrome.driver", "E:\\SOFTWARE\\driver\\chromedriver_win32 (2)\\chromedriver.exe");
-		
-		WebDriver driver = new ChromeDriver();
-		
-		driver.manage().window().maximize();
-		
-		driver.get("http://agl78:9090/QuaLISWeb/#/login");
-		
-		driver.findElement(By.xpath("//*[@id='sloginid']")).sendKeys("admin");
-		
-		driver.findElement(By.xpath("//*[@id='spassword']")).sendKeys("123");
-		
-		
-		
-		for (int i=1; i>0; i++)
-		{
-			String time=time();
-			Thread.sleep(100);
-			
-			System.out.println(name);
-			System.out.println(time);
-			
-			System.out.println(i+" time checked the time");
-			
-			if (time.equals(name))
-			{
-				
-				driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div/form/button")).click();
-			}
-		}
-		
-		
-		
-		
-	}
+	 
+ 
 	
 	public static String time() throws ParseException
 	{
