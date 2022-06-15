@@ -30,22 +30,22 @@ public class Jmeter {
 		
 		driver.findElement(By.xpath("//*[@id='spassword']")).sendKeys("123");
 		
-		System.out.print("Enter");
+		System.out.print("Can i click..?");
 		
 		for (int i=1; i>0; i++)
 		{
 			Scanner booleanValue=new Scanner(System.in);
 			
-			boolean value=booleanValue.nextBoolean();
-		 	if (value==true)
+			String value=booleanValue.nextLine();
+			
+		 	if (value.contains("yes"))
 			{
-				System.out.println("It is true");
-				
+							
 				driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div/form/button")).click();
 			}
 			else
 			{
-				System.out.println("It is false");
+				
 			}
 		}
 		
