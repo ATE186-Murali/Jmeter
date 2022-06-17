@@ -14,6 +14,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Jmeter {
 	
+	public static void decision()
+	{
+		Scanner decision = new Scanner(System.in);
+				
+	}
  	 
 	@Test
 	public  void user1() throws InterruptedException, ParseException
@@ -48,10 +53,7 @@ public class Jmeter {
 				
 			}
 		}
-		
-		
-		
-		
+			
 	}
 	 
  
